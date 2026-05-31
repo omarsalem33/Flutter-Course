@@ -49,6 +49,30 @@ Each lesson folder contains three files:
 | 27 | [Maps — Part 2](./27_maps_part2/) |
 | 28 | [Comparison Operators](./28_comparison_operators/) |
 | 29 | [Conditional Statements](./29_conditional_statements/) |
+| 30 | [If Condition — Part 1](./30_if_condition_part1/) |
+| 31 | [If Condition — Part 2](./31_if_condition_part2/) |
+| 32 | [Logical Operators](./32_logical_operators/) |
+| 33 | [If Else](./33_if_else/) |
+| 34 | [Nested If](./34_nested_if/) |
+| 35 | [Switch Case](./35_switch_case/) |
+| 36 | [Scope](./36_scope/) |
+| 37 | [Null Safety — Part 1](./37_null_safety_part1/) |
+| 38 | [Null Safety — Part 2](./38_null_safety_part2/) |
+| 39 | [Loops in Dart](./39_loops_in_dart/) |
+| 40 | [For Loop — Part 1](./40_for_loop_part1/) |
+| 41 | [For Loop — Part 2](./41_for_loop_part2/) |
+| 42 | [For Loop — Part 3](./42_for_loop_part3/) |
+| 43 | [While Loop](./43_while_loop/) |
+| 44 | [Do While Loop](./44_do_while_loop/) |
+| 45 | [For In Loop](./45_for_in_loop/) |
+| 46 | [For Each Loop](./46_for_each_loop/) |
+| 47 | [Functions Overview](./47_functions_overview/) |
+| 48 | [Basic Function](./48_basic_function/) |
+| 49 | [Return Statement](./49_return_statement/) |
+| 50 | [Parameters](./50_parameters/) |
+| 51 | [Parameters and Arguments](./51_parameters_and_arguments/) |
+| 52 | [Optional Parameters](./52_optional_parameters/) |
+| 53 | [Named Parameters](./53_named_parameters/) |
 
 ---
 
