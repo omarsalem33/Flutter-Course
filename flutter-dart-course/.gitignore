@@ -1,0 +1,20 @@
+# Dart
+.dart_tool/
+.packages
+pubspec.lock
+build/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+*.iml
