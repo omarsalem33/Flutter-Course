@@ -1,0 +1,1 @@
+# Exercises — anonymous objects
