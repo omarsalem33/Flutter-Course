@@ -1,1 +1,0 @@
-# Exercises — object class
