@@ -1,0 +1,94 @@
+
+---
+
+## 📝 **الملف السادس: `02_encapsulation_part2/exercises.dart`**
+
+```dart
+// ============================================
+// 02 — Encapsulation Part 2 | Exercises
+// ============================================
+// Follow each exercise step by step.
+// ============================================
+
+// Exercise 1:
+// Create a class `Logger` with a private method `_getTimestamp()`
+// that returns a fake timestamp string.
+// Add a public method `log(String message)` that uses the timestamp.
+
+class Logger {
+  String _getTimestamp() {
+    return "2024-01-15 10:30:00";
+  }
+
+  void log(String message) {
+    print("[${_getTimestamp()}] $message");
+  }
+}
+
+// Exercise 2:
+// Create a class `ATM` with:
+// - A private variable `_balance`
+// - A private method `_hasSufficientFunds(double amount)` that returns bool
+// - A public method `withdraw(double amount)` that checks funds first
+
+class ATM {
+  double _balance;
+
+  ATM(this._balance);
+
+  bool _hasSufficientFunds(double amount) {
+    return _balance >= amount;
+  }
+
+  void withdraw(double amount) {
+    if (_hasSufficientFunds(amount)) {
+      _balance -= amount;
+      print("Withdrawn: \$${amount}. Remaining: \$${_balance}");
+    } else {
+      print("Insufficient funds! Balance: \$${_balance}");
+    }
+  }
+}
+
+// Exercise 3:
+// Create a class `TextProcessor` with:
+// - A private method `_removeSpaces(String text)` that trims extra spaces
+// - A private method `_capitalize(String text)` that capitalizes first letter
+// - A public method `process(String text)` that uses both private methods
+
+class TextProcessor {
+  String _removeSpaces(String text) {
+    return text.trim();
+  }
+
+  String _capitalize(String text) {
+    if (text.isEmpty) return text;
+    return text[0].toUpperCase() + text.substring(1);
+  }
+
+  String process(String text) {
+    text = _removeSpaces(text);
+    text = _capitalize(text);
+    return text;
+  }
+}
+
+void main() {
+  // Test Exercise 1
+  print("--- Exercise 1 ---");
+  var logger = Logger();
+  logger.log("Application started");
+  logger.log("User logged in");
+
+  // Test Exercise 2
+  print("\n--- Exercise 2 ---");
+  var atm = ATM(1000.0);
+  atm.withdraw(300.0);
+  atm.withdraw(800.0);
+
+  // Test Exercise 3
+  print("\n--- Exercise 3 ---");
+  var processor = TextProcessor();
+  print(processor.process("  hello world  "));
+  print(processor.process("  dart programming  "));
+}
