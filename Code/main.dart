@@ -1,47 +1,35 @@
 import 'Class.dart';
-
 import 'dart:io';
 
 void main() {
-  int? age = int.tryParse(stdin.readLineSync()!);
-  double? height = double.tryParse(stdin.readLineSync()!);
-  String? name = stdin.readLineSync();
-  bool? isStudent = stdin.readLineSync()!.toLowerCase() == 'true';
+  Book book1 = Book("Clean Code", "Robert martin");
+  Book book2 = Book("Dart Programming", "Goolge");
+  Book book3 = Book("OOP Concepts", "Ali");
 
-  print(age); // Output: null
-  print("Name: $name"); // Output: null
-  print("Height: $height"); // Output: null
-  print("Is Student: $isStudent"); // Output: null
+  Member Ahmed = Member("Ahmed", 101);
+
+  Library library = Library();
+
+  library.addBook(book1);
+  library.addBook(book2);
+  library.addBook(book3);
+
+  print("----------------------------------");
+  Ahmed.showRole();
+  print("----------------------------------");
+  library.showBooks();
+  print("----------------------------------");
+  library.borrowBook("Clean Code", Ahmed);
+  print("----------------------------------");
+  library.showBooks();
+  print("----------------------------------");
+  Ahmed.showBorrowedBBooks();
+
+  Member Alaa = Member("Alaa", 102);
+
+  library.borrowBook("Clean Code", Alaa);
+
+  library.returnBook("Clean Code", Ahmed);
+
+  library.borrowBook("Clean Code", Alaa);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ReturnType functionName(ParameterType parameterName) {
-//   // function body
-//   return value;
-// }

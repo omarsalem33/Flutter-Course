@@ -1,17 +1,78 @@
-class Student {
-  String? name;
-  int? age;
+class Book {
+  late String title;
+  late String author;
+  late bool isAvilable;
 
-  Student(String? name, int? age) : this.name = name, this.age = age;
-
-  // Student(this.name, this.age){
-  //   print('Constructor called: Name: $name, Age: $age');
-  // }
+  Book(this.title, this.author, {this.isAvilable = true});
 
   void displayInfo() {
-    print('Name: $name, Age: $age');
+    print("Title: $title | Author: $author | Available : $isAvilable ");
   }
 }
 
-// A constructor is a special method that is automatically called when you create a new object.
-// Its job is to initialize (set up) the object's attributes.
+abstract class Person {
+  String name;
+  Person(this.name);
+
+  void showRole();
+}
+
+class Member extends Person {
+  int memberId;
+  List<Book> borrowBooks = [];
+
+  Member(String name, this.memberId) : super(name);
+
+  @override
+  void showRole() {
+    print("$name is library member");
+  }
+
+  void showBorrowedBBooks() {
+    if (borrowBooks.isEmpty)
+      print("$name has no borrowed Books");
+    else {
+      print("$name Borrowed");
+      for (var book in borrowBooks) print(book.title);
+    }
+  }
+}
+
+class Library {
+  List<Book> books = [];
+
+  void addBook(Book book) {
+    books.add(book);
+    print("${book.title} added");
+  }
+
+  void showBooks() {
+    print("\nLibrary Books: ");
+    for (var x in books) {
+      x.displayInfo();
+    }
+  }
+
+  void borrowBook(String title, Member member) {
+    try {
+      Book book = books.firstWhere((b) => b.title == title);
+
+      if (book.isAvilable) {
+        book.isAvilable = false;
+        member.borrowBooks.add(book);
+        print("${member.name} borrowed ${book.title}");
+      } else {
+        print("${book.title} is not available");
+      }
+    } catch (e) {
+      print("Book no found");
+    }
+  }
+
+  void returnBook(String title, Member member) {
+    Book book = member.borrowBooks.firstWhere((b) => b.title == title);
+    book.isAvilable = true;
+    member.borrowBooks.remove(book);
+    print("${member.name} returned ${book.title}");
+  }
+}
