@@ -6,7 +6,7 @@ void main() {
 
 class PointsCounter extends StatefulWidget {
   @override
-  State<PointsCounter> createState() => _PointsCounterState();
+    State<PointsCounter> createState() => _PointsCounterState();
 }
 
 class _PointsCounterState extends State<PointsCounter> {
